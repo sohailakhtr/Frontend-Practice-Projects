@@ -1,0 +1,896 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  overflow-x: hidden; /* Poore page ka left-right scroll block karne ke liye */
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-lato);
+  /* font-size: 18px; */
+
+  color: #121f39;
+}
+/* .main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
+
+.logo img {
+  /* width: 100%; */
+  width: auto;
+  padding-left: 15px;
+  /* border: 1px solid #000; */
+}
+/* img {
+  width: 100%;
+  height: 100%;
+} */
+
+nav {
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  /* flex-direction: row; */
+  /* border: 1px solid #00ff40; */
+  background-color: rgb(255, 255, 255);
+  /* background-color: #ff0000; */
+  /* align-items: start; */
+  /* justify-content: space-evenly; */
+  /* justify-content: center; */
+  width: 100%;
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
+  /* justify-content: baseline; */
+  height: 110px;
+  /* top: 10%; */
+
+  display: flex;
+  justify-content: space-between; /* Logo ko left par aur menu-btn ko right par rakhay ga */
+  align-items: center; /* Dono ko vertically perfectly center karega */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  /* gap: 20px; */
+  height: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* border: 1px solid #ff0000; */
+}
+
+.online-book {
+  display: flex;
+
+  height: 50%;
+
+  width: 110%;
+
+  gap: 30%;
+  padding-left: 10px;
+  font-size: x-large;
+
+  align-items: center;
+
+  /* border: 1px solid #000; */
+
+  background-color: #b0653c;
+
+  color: white;
+}
+
+.social-icon {
+  display: flex;
+  cursor: pointer;
+  gap: 20px;
+}
+
+/* Main Navigation Bar Parent Container */
+
+.navigation-bar {
+  display: flex;
+  width: 95%;
+  /* gap: 100px; */
+  height: 55px;
+  list-style: none;
+  /* paddin: 50px; */
+  justify-content: space-around;
+  /* padding: 0; */
+  /* border: 1px solid #0026ff; */
+  margin-left: 55px;
+}
+
+/* 2. Main Menu Items (Home, About, Smiles etc.) */
+
+.navigation-bar > li {
+  position: relative;
+  display: flex;
+  /* justify-content: space-around; */
+
+  align-items: center;
+  /* border: 1px solid #000; */
+
+  cursor: pointer;
+}
+
+.navigation-bar a {
+  text-decoration: none;
+  color: #0b1d33;
+  font-size: 16px;
+}
+.navigation-bar .home {
+  color: #b0653c;
+}
+
+/* 4. Dropdown Box (Default State: Hidden aur bilkul neche) */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  background-color: #121f39;
+
+  /* border: 1px solid #ff0000; */
+
+  list-style: none;
+
+  /* padding-top: 10px; */
+
+  margin: 0;
+
+  /* margin-top: 5px; */
+
+  display: none;
+
+  z-index: 1000;
+}
+
+/* 5.hover jub us par mouse aay */
+
+.navigation-bar .menu:hover .dropdown {
+  display: flex;
+
+  flex-direction: column;
+}
+
+/* 6. Dropdown ke andar ke links ki styling */
+
+.dropdown li {
+  display: block;
+
+  width: 100%;
+}
+
+.dropdown li a {
+  display: block;
+
+  width: 100%;
+
+  padding: 12px 15px;
+
+  color: white;
+
+  box-sizing: border-box; /* Padding se width kharab nahi hogi */
+}
+
+/* 7. Dropdown Single Text Hover Effect */
+
+.dropdown li a:hover {
+  background-color: #b0653c; /* Brown/Orange color single row par */
+}
+/* --- New Consultation Button Styling --- */
+.consultation-btn {
+  display: inline-flex;
+  align-items: center;
+  align-self: center; /* Navbar ke center mein align rakhne ke liye */
+  gap: 10px;
+  background-color: #0b1d33; /* Deep Navy Blue background */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 11px 13px;
+  border-radius: 50px;
+  /* font-family: inherit; */
+  border: 1px solid #000;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Icon (SVG) sizing */
+.consultation-btn .arrow-icon {
+  width: 13px;
+  height: 13px;
+  padding-top: 1px;
+  align-content: center;
+  align-content: center;
+}
+
+/* Arrow path color */
+.consultation-btn .arrow-icon path {
+  fill: #ffffff;
+}
+
+.consultation-btn:hover {
+  background-color: #b0653c;
+  /* transition: none; */
+}
+
+.consultation-btn:hover {
+  background-color: #ffffff; /* Brown color */
+  color: #000;
+  /* border: 1px solid #000; */
+}
+
+/* Hover hone par ARROW ka color change karne ke liye */
+.consultation-btn:hover .arrow-icon path {
+  fill: #121f39;
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .navbar {
+    display: block;
+  }
+
+  .menu-btn {
+    /* display: flex; */
+    display: none;
+    /* margin-top: 30px; */
+    /* align-items: center; */
+    /* border: 1px solid #000; */
+  }
+}
+
+.menu-btn {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  font-size: 30px;
+  color: #b0653c;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin: 45px;
+}
+.menu-checkbox {
+  display: none;
+}
+
+.sidebar {
+  /* Layout & Positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Agar full screen chahiye, varna max-width use karein */
+  height: 100vh; /* Screen ke mutabik full height, 130vh ki zaroorat nahi */
+
+  /* Flexbox Alignment */
+  display: flex;
+  flex-direction: column;
+
+  /* Box Sizing & Borders */
+  box-sizing: border-box;
+  /* border: 1px solid #000; */
+  background-color: #b0653c;
+
+  /* Overflow Management */
+  overflow-x: hidden; /* Left/Right scrolling ko block karne ke liye */
+  overflow-y: auto; /* Agar content 100vh se barh jaye to andar scroll bane */
+
+  /* Animation & State */
+  transform: translateX(-100%);
+  transition: transform 0.9s ease; /* Specific transform par animation apply ki */
+}
+
+.menu-checkbox:checked ~ .sidebar {
+  display: block;
+  transform: translateX(0%);
+  transition: all 0.9s ease;
+}
+
+.sidebar-header {
+  /* border: 1px solid #000; */
+  /* width: 99%; */
+  justify-content: space-between;
+  align-items: center;
+  height: 20vh;
+  display: flex;
+  margin-left: 20px;
+
+  /* align-items: center; */
+  /* justify-content: end; */
+}
+.cross-icon {
+  /* border: 1px solid #000; */
+  /* width: 40%; */
+  height: 10vh;
+  font-size: 25px;
+  color: white;
+  display: flex;
+  margin: 5px;
+  align-items: center;
+  justify-content: end;
+  /* display: flex; */
+}
+.logoicon {
+  /* border: 1px solid #000; */
+  width: 13vw;
+  height: 13vh;
+  /* display: flex; */
+}
+.logoicon img {
+  width: 100%;
+  height: 100%;
+}
+.navlink {
+  height: 80vh;
+  margin-left: 20px;
+}
+
+.dropdown-menu {
+  /* margin-left: 10px; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  /* height: 10vh;  REMOVE THIS */
+  min-height: 10vh;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+
+  /* background-color: #000000; */
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+}
+
+.down-icon {
+  font-size: 23px;
+  font-weight: bolder;
+  /* padding-right: 30px; */
+}
+
+.drop22 {
+  width: 110%;
+  max-height: 0;
+  font-weight: bolder;
+  opacity: -1;
+  padding-top: 10px;
+  margin: 12px 0px 12px 0px;
+  background-color: #121f39;
+  overflow: hidden;
+  /* padding-top: 10px; */
+
+  margin-left: -25px;
+
+  transition: 1s ease-in-out;
+  /* max-height 0.4s ease, opacity 0.4s ease; */
+}
+
+.drop22.active {
+  opacity: 1;
+}
+
+.drop22 li {
+  min-height: 45px;
+}
+
+.drop22 li a {
+  padding-left: 20px;
+  padding-top: 13px;
+  color: white;
+  /* padding-left: -100px; */
+  /* transition: 0.9s ease-in-out; */
+
+  /* transition-delay: 6s; */
+}
+.down-icon {
+  transition: transform 0.7s ease;
+}
+
+.down-icon.rotate {
+  transform: rotate(180deg);
+}
+.drop22 li {
+  opacity: 0;
+  /* transform: translateY(-10px); */
+}
+
+.drop22.active li {
+  animation: fadeSlide 0.5s forwards;
+}
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(20);
+  }
+}
+
+.hero-section {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  /* border: 1px solid #ff0707; */
+  display: flex;
+  top: 100px;
+  color: aliceblue;
+  background:
+    linear-gradient(rgba(12, 26, 39, 0.4), rgba(12, 26, 39, 0.4)),
+    url("/images/start-smiling-wounder.webp") repeat no-repeat center/cover;
+}
+.contentsection {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 20px;
+  width: 91%;
+  height: 50vh;
+  /* border: 1px solid #ff0000; */
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  width: 100px;
+  height: 50px;
+  /* border: 1px solid #000; */
+}
+.hero-h1 {
+  font-size: 60px;
+}
+.hero-para {
+  font-size: 19px;
+}
+
+/* hero button */
+
+.herobtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #b0653c;
+  width: 190px;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid #b0653c;
+}
+.subherobtn {
+  position: relative;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 500;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+.herobtn .arrow-element {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  height: 40px;
+  width: 40px;
+  /* border: 1px solid #000; */
+  background-color: #ffffff;
+  border-radius: 40px;
+  transition: width 0.4s ease-in-out;
+}
+.arrow-element img {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: auto;
+  z-index: 11;
+}
+.herobtn:hover .subherobtn {
+  color: #b0653c;
+}
+.herobtn:hover .arrow-element {
+  width: calc(100% - 8px);
+}
+@media (max-width: 1024px) {
+  .bannersection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+.bannersection {
+  /* flex-wrap: wrap; */
+  position: relative;
+  display: flex;
+  width: 100%;
+  /* height: 110vh; */
+  height: auto;
+  top: 150px;
+  align-items: center;
+
+  border: 1px solid #00ff2a;
+  justify-content: space-around;
+}
+.cardsection {
+  display: flex;
+  /* width: 50%; */
+  flex-wrap: wrap;
+  /* height: 100vh; */
+  /* position: relative; */
+  /* top: 50px; */
+  gap: 10px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #000; */
+}
+.textsection {
+  width: 45%;
+  /* height: 100vh; */
+  /* border: 1px solid #000; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 18px;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+.card {
+  width: auto;
+  /* padding-top: 13px; */
+  height: 85vh;
+  /* border: 1px solid #ff0000; */
+}
+.card img {
+  width: 100%;
+  height: 85vh;
+}
+.card2 img {
+  width: 100%;
+  height: 45vh;
+}
+.card2 {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+  /* width: 50%; */
+  height: 90vh;
+  /* border: 1px solid #1100ff; */
+}
+.card1 {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* gap: 10px; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* width: 90%; */
+  height: 80vh;
+  /* border: 1px solid #ff00d4; */
+}
+.treatments-section {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+
+  position: relative;
+  top: 180px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* width: 100%; */
+  /* height: 200vh; */
+  border: 1px solid #000;
+  background-color: #f8efeb;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  align-items: center;
+}
+.treath1 {
+  color: #111827;
+  /* font-size: 20px; */
+  /* font-family: "Lato", "Lato Fallback", sans-serif; */
+}
+.tableimage img {
+  width: 100%;
+  height: 17vh;
+}
+.tableimage {
+  width: 100%;
+  /* height: 25v/h; */
+  /* border: 1px solid #f10000; */
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  justify-content: space-around;
+}
+.tableimage1 {
+  width: 43%;
+  /* height: 10vh; */
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+  /* text-align: center; */
+  /* align-content: center; */
+  /* overflow: hidden; */
+  /* border: 1px solid #000; */
+}
+.spandiv {
+  display: flex;
+  top: 70px;
+  border-radius: 8px;
+  /* padding: 10px; */
+  align-items: center;
+  position: absolute;
+  justify-content: space-evenly;
+  width: 14%;
+  color: #f7f7f8;
+  height: 8vh;
+  /* border: 1px solid #ff0000; */
+  background-color: #b0653c;
+}
+.spandiv1 {
+  background-color: #0b1d33;
+}
+.tablebtn {
+  font-weight: bold;
+  font-size: 16px;
+}
+.treatdownarrow {
+  padding: 6px 5px;
+  border-radius: 2px;
+  align-items: center;
+  text-align: center;
+
+  font-size: 15px;
+  border: 1px solid #f7f7f8;
+}
+.treatdownarrow {
+  font-size: 8px;
+  transform: rotateX(180deg);
+}
+.secondarrow {
+  transform: rotateY(180deg);
+}
+.showtable {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding-top: 30px; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* border-top: none; */
+  /* border-right: none; */
+  /* border-left: none; */
+  /* border: 1px solid #000; */
+}
+
+.showtable1 {
+  /* border: 1px solid #ff0000; */
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 31%;
+  height: 50vh;
+  /* color: #000000; */
+  border: 2px solid #717980;
+
+  border-left: none;
+  text-decoration: none;
+  color: #121f39;
+  /* border-top: none; */
+}
+.treaimgsec {
+  display: flex;
+  /* border: 1px solid #000; */
+  width: 17%;
+  /* box-shadow: #001629; */
+  height: 12vh;
+  text-align: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: white;
+}
+.treatspan {
+  display: flex;
+  width: 20%;
+  height: 11vh;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 1px solid #000; */
+}
+.showtable1:hover {
+  border-top-left-radius: 10px;
+  /* cursor: pointer; */
+  background-color: rgba(255, 255, 255, 0.434);
+}
+.showtable1:hover .treatspan {
+  background: url(/images/arrow-treatments.png) repeat no-repeat center/cover;
+  color: white;
+}
+.tretheading {
+  font-size: 22px;
+  list-style: none;
+  /* text-decoration: none; */
+  font-weight: 400;
+  color: #000000;
+}
+
+/* .treatspan:hover .treatspan {
+  background: url(/images/arrow-treatments.png);
+  color: white;
+} */
+.arrowright {
+  font-size: 22px;
+}
+.table11 {
+  border-left: none;
+  border-top: none;
+}
+.table12 {
+  border-top: none;
+}
+.table12:hover {
+  border-top-left-radius: 0px;
+
+  border-top: none;
+}
+.table13 {
+  border-top: none;
+  border-right: none;
+}
+.table13:hover {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 10px;
+
+  border-top: none;
+  border-right: none;
+}
+.table14 {
+  border-top: none;
+}
+.table14:hover {
+  border-top-left-radius: 0px;
+
+  border-top: none;
+}
+.table15 {
+  border-top: none;
+}
+.table15:hover {
+  border-top-left-radius: 0px;
+
+  border-top: none;
+}
+.table16 {
+  border-top: none;
+  border-right: none;
+}
+.table16:hover {
+  border-top-left-radius: 0px;
+
+  border-top: none;
+  border-right: none;
+}
+.table17 {
+  border-top: none;
+  border-bottom: none;
+}
+.table17:hover {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 10px;
+
+  border-top: none;
+  border-bottom: none;
+}
+.table18 {
+  border-top: none;
+  border-bottom: none;
+}
+.table18:hover {
+  border-top-left-radius: 0px;
+
+  border-top: none;
+  border-bottom: none;
+}
+.table19 {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+.table19:hover {
+  border-top-left-radius: 0px;
+
+  border-bottom-right-radius: 10px;
+
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* LEFT SE SCROLL ANIMATION */
+/* .scroll-animate-left {
+  animation: scrollLeft linear both;
+  animation-timeline: view(
+
+  ); /* Modern CSS feature: Scroll ko track karta hai */
+/* animation-range: entry 10% cover 40%; Jab element screen me aane lage tabhi chale */
+/* } */
+
+/* RIGHT SE SCROLL ANIMATION */
+/* .scroll-animate-right { */
+/* animation: scrollRight linear both; */
+/* animation-timeline: view(); */
+/* animation-range: entry 10% cover 40%; */
+/* } */
+
+/* @keyframes scrollLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+
+/* @keyframes scrollRight {
+  from {
+    animation-delay: 5s;
+    opacity: 0;
+    transform: translateX(150px); /* Shuru me right par chipka hoga */
+/* } */
+/* to { */
+/* opacity: 1; */
+/* transform: translateX(0); */
+/* } */
+/* } */
