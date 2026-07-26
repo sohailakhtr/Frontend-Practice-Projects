@@ -13,6 +13,7 @@ body {
   /* flex-wrap: wrap; */
   padding: 0;
   color: #121f39;
+  /* font-family: "Lato", "Lato Fallback", sans-serif; */
 }
 .logo img {
   /* width: 100%; */
@@ -43,6 +44,7 @@ nav {
   flex-direction: column;
   width: 100%;
   /* gap: 20px; */
+  font-family: "Lato", "Lato Fallback", sans-serif;
   height: 100%;
 }
 
@@ -52,10 +54,12 @@ nav {
   width: 110%;
   gap: 30%;
   padding-left: 10px;
-  font-size: x-large;
+  font-size: 20px;
   align-items: center;
   /* border: 1px solid #000; */
+  /* background-color: #b0653c; */
   background-color: #b0653c;
+
   color: white;
 }
 
@@ -72,9 +76,10 @@ nav {
   width: 95%;
   /* gap: 100px; */
   height: 55px;
+  font-family: "Lato", "Lato Fallback", sans-serif;
   list-style: none;
   /* paddin: 50px; */
-  justify-content: space-around;
+  justify-content: space-evenly;
   /* padding: 0; */
   /* border: 1px solid #0026ff; */
   margin-left: 55px;
@@ -92,7 +97,7 @@ nav {
 .navigation-bar a {
   text-decoration: none;
   color: #0b1d33;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .navigation-bar .home {
@@ -154,7 +159,7 @@ nav {
   border-radius: 50px;
   /* font-family: inherit; */
   border: 1px solid #000;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
 }
@@ -191,6 +196,12 @@ nav {
   .navbar {
     display: none;
   }
+  .consultation-btn {
+    display: none;
+  }
+  .navigation-bar {
+    width: 93%;
+  }
   .menu-btn {
     display: block;
   }
@@ -212,7 +223,9 @@ nav {
   cursor: pointer;
   background: none;
   border: none;
-  margin: 45px;
+  margin: 45px 5px 45px 45px;
+  /* margin-right: 5px; */
+  /* border: 1px solid #000; */
 }
 
 .menu-checkbox {
@@ -374,10 +387,30 @@ nav {
   }
 }
 
+@media (max-width: 320px) {
+  .hero-section {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+}
+@media (max-width: 375px) {
+  .hero-section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+@media (max-width: 425px) {
+  .hero-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
 .hero-section {
   /* width: 100%; */
   position: relative;
   display: flex;
+  /* background-position: bottom; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -387,10 +420,10 @@ nav {
   top: 115px;
   color: aliceblue;
   background:
-    linear-gradient(rgba(12, 26, 39, 0.4), rgba(12, 26, 39, 0.4)),
-    url("/images/start-smiling-wounder.webp") repeat no-repeat center/cover;
+    linear-gradient(#121f3999, #121f39cc),
+    url("/images/banner.webp") repeat no-repeat center/cover;
   padding-top: 100px;
-  padding-bottom: 40px;
+  padding-bottom: 100px;
 }
 
 .contentsection {
@@ -413,11 +446,13 @@ nav {
 }
 
 .hero-h1 {
-  font-size: 60px;
+  font-size: 57px;
 }
 
 .hero-para {
-  font-size: 19px;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "Lato", "Lato Fallback", sans-serif;
 }
 
 /* hero button */
@@ -447,10 +482,10 @@ nav {
 
 .herobtn .arrow-element {
   position: absolute;
-  top: 4px;
+  top: 2px;
   right: 4px;
-  height: 40px;
-  width: 40px;
+  height: 44px;
+  width: 44px;
   /* border: 1px solid #000; */
   background-color: #ffffff;
   border-radius: 40px;
@@ -472,16 +507,16 @@ nav {
 }
 
 .herobtn:hover .arrow-element {
-  width: calc(100% - 8px);
+  width: calc(100% - 9px);
 }
 .bannersection {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   gap: 40px;
   width: 100%;
   max-width: 1400px;
-  margin: 141px auto 0;
+  margin: 148px auto 0;
   padding: 0 20px;
   margin-bottom: 30px;
 }
@@ -490,7 +525,11 @@ nav {
   flex: 1;
   display: flex;
   gap: 12px;
+  /* border: 1px solid #000; */
   min-width: 0;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* padding-bottom: 30px; */
   height: 500px;
 }
 
@@ -498,14 +537,20 @@ nav {
   flex: 1;
   overflow: hidden;
   border-radius: 12px;
+  width: 100%;
+  height: 92%;
+  margin-top: 19px;
+  /* margin-bottom: 30px; */
+  /* border: 1px solid #000; */
+  /* padding-bottom: 30px; */
 }
 
 .card img {
+  /* border: 1px solid #000; */
+  object-fit: cover;
   width: 100%;
-  height: 94%;
-  /* object-fit: cover; */
+  object-position: top;
   display: block;
-  padding-top: 30px;
 }
 
 .card2 {
@@ -526,24 +571,29 @@ nav {
   height: 100%;
   object-fit: cover;
   display: block;
+  object-position: top;
 }
 
 .textsection {
   flex: 1;
   min-width: 0;
+  font-family: "Lato", "Lato Fallback", sans-serif;
+
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
+  color: #121f39;
 }
 
 .textsection h1 {
-  font-size: 56px;
-  line-height: 1.1;
+  font-size: 45px;
+  /* line-height: 1.1; */
 }
 
 .textsection p {
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 @media (max-width: 1024px) {
   .bannersection {
@@ -620,9 +670,12 @@ nav {
 }
 
 .treath1 {
+  font-size: 34px;
   /* font-size: clamp(30px, 5vw, 50px); */
   text-align: center;
-  margin-top: 30px;
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  padding-top: 64px;
+  /* margin-top: 30px; */
   color: #121f39;
 }
 .tableimage {
@@ -632,16 +685,19 @@ nav {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  /* border: 1px solid #d30a0a; */
 }
 
 .tableimage1 {
   flex: 1 1 107px;
   /* min-width: 300px; */
   position: relative;
+  /* border: 1px solid #000; */
 }
 
 .tableimage1 img {
   width: 100%;
+  height: 120px;
   display: block;
   border-radius: 12px;
 }
@@ -650,16 +706,18 @@ nav {
   left: 50%;
   bottom: -18px;
   transform: translateX(-50%);
-  width: 85%;
+  width: 211px;
   max-width: 350px;
-  height: 60px;
+  height: 48px;
   background: #b0653c;
   color: white;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 0 20px;
+  font-family: "Lato", "Lato Fallback", sans-serif;
+
+  padding: 0px 4px;
 }
 .spandiv1 {
   background: #121f39;
@@ -670,15 +728,14 @@ nav {
 }
 
 .treatdownarrow {
-  width: 30px;
-  height: 30px;
-
+  width: 27px;
+  height: 27px;
   border: 1px solid white;
-  border-radius: 50%;
-
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 
 .secondarrow {
@@ -690,6 +747,7 @@ nav {
   max-width: 1300px;
   display: flex;
   flex-wrap: wrap;
+  font-family: "Lato", "Lato Fallback", sans-serif;
 }
 .showtable1 {
   flex: 0 0 33.333%;
@@ -729,8 +787,9 @@ nav {
 }
 
 .tretheading p {
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 20px;
+  /* font-weight: 500; */
+  /* margin-top: 24px; */
 }
 
 .treatspan {
@@ -740,7 +799,7 @@ nav {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  transition: 0.3s;
+  /* transition: 0.3s; */
 }
 
 .showtable1:hover .treatspan {
@@ -751,6 +810,8 @@ nav {
 
 .arrowright {
   font-size: 22px;
+  /* width: 30px; */
+  /* height: 30px;/ */
 }
 
 .table11,
@@ -823,6 +884,7 @@ nav {
 
   .tretheading p {
     font-size: 20px;
+    margin-top: 24px;
   }
 
   .treaimgsec {
@@ -830,9 +892,7 @@ nav {
     height: 80px;
   }
 }
-/* ==========================================
-   BASE & LARGE SCREENS (1440px+)
-   ========================================== */
+
 .bgsection {
   position: relative;
   width: 100%;
@@ -843,6 +903,7 @@ nav {
   align-items: center;
   background: url("/images/start-smiling-wounder.webp") no-repeat center / cover;
   padding: 40px 20px;
+  /* border: 1px solid #000; */
   box-sizing: border-box;
 }
 
@@ -877,13 +938,13 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: start;
-  text-align: center;
+  text-align: start;
   gap: 25px;
   width: 100%;
 }
 
 .bgpara {
-  font-size: 38px;
+  font-size: 45px;
   font-weight: bold;
   color: #ffffff;
   line-height: 1.25;
@@ -899,6 +960,7 @@ nav {
   border-radius: 50px;
   cursor: pointer;
   gap: 15px;
+  width: 45%;
   border: 1px solid #000000;
   transition: background-color 0.3s ease;
 }
@@ -928,10 +990,11 @@ nav {
   font-size: 13px;
   white-space: nowrap;
 }
-/* ==========================================
-   LAPTOP / TABLET LANDSCAPE (1024px)
-   ========================================== */
+
 @media (max-width: 1024px) {
+  .bgbtn {
+    width: 50%;
+  }
   .bgsection {
     height: auto;
     /* min-height: 450px; */
@@ -952,9 +1015,6 @@ nav {
   }
 }
 
-/* ==========================================
-   TABLETS & SMALL SCREENS (768px)
-   ========================================== */
 @media (max-width: 768px) {
   .bgsection {
     padding: 40px 15px;
@@ -974,10 +1034,13 @@ nav {
   }
 }
 
-/* ==========================================
-   SMALL MOBILES (325px - 425px)
-   ========================================== */
 @media (max-width: 425px) {
+  .bgbtn {
+    width: 63%;
+  }
+  .bgbtn .bgsubbtn {
+    font-size: 15px;
+  }
   .bgsection {
     padding: 30px 10px;
   }
@@ -990,6 +1053,17 @@ nav {
     font-size: 21px;
   }
 }
+@media (max-width: 375px) {
+  .bgbtn {
+    width: 73%;
+  }
+}
+@media (max-width: 325px) {
+  .bgbtn {
+    width: 90%;
+  }
+}
+
 /* Base Section Wrapper */
 .patient {
   /* top: 180px; */
@@ -1005,7 +1079,7 @@ nav {
 }
 
 .patienthead {
-  font-size: 50px;
+  font-size: 36px;
   font-weight: bold;
   color: #12223c;
   text-align: center;
@@ -1073,21 +1147,24 @@ nav {
 
 .testimonial-image {
   width: 100%;
-  height: 150px;
-  /* object-fit: cover; */
+  height: 190px;
+  object-fit: cover;
+  object-fit: top;
+  object-position: top;
   border-radius: 1rem;
 }
 
 @media (min-width: 640px) {
   .testimonial-image {
     height: 100%;
-    min-height: 180px;
+    min-height: 200px;
   }
 }
 .testimonial-content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  font-family: "Lato", "Lato Fallback", sans-serif;
 }
 
 .testimonial-body {
@@ -1115,7 +1192,7 @@ nav {
   color: #12223c;
   /* cursor: pointer; */
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 16px;
   margin-top: 1.5rem;
   display: block;
   text-align: left;
@@ -1132,15 +1209,16 @@ nav {
 }
 
 .patient-name {
+  /* width: 100%; */
   margin: 0;
   font-weight: 700;
   color: #12223c;
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .patient-label {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 14px;
   color: #b56a43;
   margin-top: 2px;
 }
@@ -1150,12 +1228,12 @@ nav {
 }
 
 .stars-icon {
-  width: 70px;
-  height: auto;
+  width: 96px;
+  height: 15px;
 }
 .btnsection {
   width: 100%;
-  margin-top: 40px;
+  margin: 32px 0px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1187,20 +1265,23 @@ nav {
 }
 
 .meetheading h1 {
-  font-family: sans-serif;
-  font-size: 36px;
+  font-size: 45px;
   font-weight: bold;
   color: white;
   margin: 0;
 }
 
 .meetpara {
+  font-family: Lato, "Lato Fallback", sans-serif;
+
+  /* font-family: "Cormorant Garamond", Georgia, serif; */
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70%;
-  font-size: 16px;
+  /* width: 70%; */
+  font-size: 20px;
   line-height: 1.6;
   text-align: center;
   gap: 15px;
@@ -1346,7 +1427,12 @@ nav {
 }
 @media (max-width: 1024px) {
   .metbtn {
-    width: 30%;
+    width: 20%;
+  }
+}
+@media (max-width: 1500px) {
+  .metbtn {
+    width: 15%;
   }
 }
 
@@ -1400,7 +1486,7 @@ nav {
   }
 
   .metbtn {
-    width: 25%;
+    width: 26%;
     /* border: 1px solid #0faf17; */
   }
 }
@@ -1439,6 +1525,13 @@ nav {
   /* .subherobtn {
     font-size: 13px;
   } */
+}
+@media (max-width: 375px) {
+  .metbtn {
+    width: 50%;
+    /* padding: 12px 24px; */
+    /* border: 1px solid #0faf17; */
+  }
 }
 @media (max-width: 320px) {
   .meetheading h1 {
@@ -1602,7 +1695,7 @@ nav {
 
 .formtitle h1 {
   font-size: 36px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  /* font-family: "Cormorant Garamond", Georgia, serif; */
   font-weight: 600;
   margin: 0;
   /* line-height: 1.1; */
@@ -1613,6 +1706,8 @@ nav {
   line-height: 1.4;
   font-size: 14px;
   color: #121f39;
+  font-family: Lato, "Lato Fallback", sans-serif;
+
   margin: 0;
   text-align: right;
 }
@@ -1645,15 +1740,18 @@ nav {
 }
 
 .formtittlepara h2 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  /* font-family: "Cormorant Garamond", Georgia, serif; */
+
   font-weight: 500;
-  font-size: 26px;
+  font-size: 30px;
   color: #121f39;
   margin: 0 0 8px 0;
 }
 
 .formtittlepara p {
-  font-size: 13.5px;
+  font-family: Lato, "Lato Fallback", sans-serif;
+
+  font-size: 18px;
   line-height: 1.4;
   color: #333;
   margin-bottom: 10px;
@@ -1757,14 +1855,14 @@ select.slectt {
   gap: 12px;
   justify-content: start;
   /* background-color: #a2532f; */
-  padding: 5px 5px 5px 22px;
+  padding: 10px 56px 10px 24px;
   border-radius: 50px;
   cursor: pointer;
 }
 
 .subherobtn {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -1781,7 +1879,7 @@ select.slectt {
 }
 
 .arrow-element img {
-  width: 14px;
+  width: 20px;
   height: auto;
   display: block;
 }
@@ -1798,7 +1896,7 @@ select.slectt {
   }
 
   .formimg img {
-    height: 320px;
+    /* height: 320px; */
   }
 
   .forrm {
@@ -2042,8 +2140,8 @@ iframe {
 
 .fotricon img {
   padding: 5px;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
 /* ==========================================
@@ -2084,6 +2182,8 @@ iframe {
 }
 
 .fotrbtn2 {
+  font-family: Lato, "Lato Fallback", sans-serif;
+
   flex: 1;
   display: flex;
   align-items: flex-start;
@@ -2146,6 +2246,8 @@ iframe {
    3. BOTTOM BAR (footer2)
    ========================================== */
 .footer2 {
+  font-family: Lato, "Lato Fallback", sans-serif;
+
   display: flex;
   background-color: #b0653c;
   width: 100%;
@@ -2267,13 +2369,10 @@ iframe {
 
 .fotricon img {
   padding: 5px;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
-/* ==========================================
-   2. DESKTOP VIEW (1024px & ABOVE) - 4 Columns
-   ========================================== */
 .footertxt2 {
   display: flex;
   align-items: flex-start;
@@ -2295,7 +2394,7 @@ iframe {
 
 .fotrbtn p {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   margin: 0;
   padding-bottom: 10px;
@@ -2331,7 +2430,7 @@ iframe {
 
 .fortranchor p {
   text-align: start;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   margin: 0 0 15px 0;
 }
@@ -2367,9 +2466,6 @@ iframe {
   flex-shrink: 0;
 }
 
-/* ==========================================
-   3. BOTTOM BAR (footer2)
-   ========================================== */
 .footer2 {
   display: flex;
   background-color: #b0653c;
@@ -2435,10 +2531,6 @@ iframe {
   opacity: 0.8;
 }
 
-/* ==========================================
-   4. TABLET VIEW (601px - 1023px)
-   1024px se chhote hone par 2x2 grid banega
-   ========================================== */
 @media screen and (max-width: 1023px) {
   .footertxt2 {
     display: flex !important;
@@ -2447,12 +2539,10 @@ iframe {
     row-gap: 40px !important;
   }
 
-  /* Extra container div bypass */
   .fotrbtn2 {
     display: contents !important;
   }
 
-  /* Row 1 - Left: Intro & Buttons */
   .fotrbtn {
     flex: 0 0 46% !important;
     width: 46% !important;
@@ -2466,7 +2556,6 @@ iframe {
     width: 100% !important;
   }
 
-  /* Row 1 - Right: General Dentistry (Border-Left Ke Saath) */
   .fotrbtn2 .fortranchor:nth-child(1) {
     flex: 0 0 48% !important;
     width: 48% !important;
@@ -2476,7 +2565,6 @@ iframe {
     box-sizing: border-box !important;
   }
 
-  /* Row 2 - Left: General Dentistry (Second Column) */
   .fotrbtn2 .fortranchor:nth-child(2) {
     flex: 0 0 46% !important;
     width: 46% !important;
@@ -2485,7 +2573,6 @@ iframe {
     padding-left: 0 !important;
   }
 
-  /* Row 2 - Right: Get In Touch */
   .fotrbtn2 .fortranchor:nth-child(3) {
     flex: 0 0 48% !important;
     width: 48% !important;
@@ -2495,10 +2582,6 @@ iframe {
   }
 }
 
-/* ==========================================
-   5. MOBILE VIEW (600px & BELOW)
-   Single Column Vertical Layout
-   ========================================== */
 @media screen and (max-width: 600px) {
   .footerlogo {
     width: 110px;
@@ -2534,6 +2617,9 @@ iframe {
   }
 
   .fortranchor p {
+    font-size: 16px;
+  }
+  .fortranchor p .open {
     font-size: 18px;
   }
 
@@ -2561,58 +2647,3 @@ iframe {
     gap: 12px;
   }
 }
-/* .btnsec:active { */
-/* transform: scale(0.95); Active press effect */
-/* }  */
-/* LEFT SE SCROLL ANIMATION */
-
-/* .scroll-animate-left {
-  animation: scrollLeft linear both;
-  animation-timeline: view(
-
-  ); /* Modern CSS feature: Scroll ko track karta hai */
-
-/* animation-range: entry 10% cover 40%; Jab element screen me aane lage tabhi chale */
-
-/* } */
-
-/* RIGHT SE SCROLL ANIMATION */
-
-/* .scroll-animate-right { */
-
-/* animation: scrollRight linear both; */
-
-/* animation-timeline: view(); */
-
-/* animation-range: entry 10% cover 40%; */
-
-/* } */
-
-/* @keyframes scrollLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-150px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-} */
-
-/* @keyframes scrollRight {
-  from {
-    animation-delay: 5s;
-    opacity: 0;
-    transform: translateX(150px); /* Shuru me right par chipka hoga */
-
-/* } */
-
-/* to { */
-
-/* opacity: 1; */
-
-/* transform: translateX(0); */
-
-/* } */
-
-/* } */
