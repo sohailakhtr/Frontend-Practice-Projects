@@ -307,6 +307,8 @@ nav {
 }
 
 .dropdown-menu li {
+  font-family: Lato, "Lato Fallback", sans-serif;
+
   list-style: none;
   display: flex;
   flex-direction: column;
